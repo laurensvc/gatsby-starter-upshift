@@ -4,8 +4,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/markdown-pages`,
+        name: `cms-pages`,
+        path: `${__dirname}/src/cms-pages`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
-        logo: "./src/assets/images/favicon.jpg",
+        logo: "./src/assets/branding/favicon.png",
 
         // WebApp Manifest Configuration
         dir: "auto",
