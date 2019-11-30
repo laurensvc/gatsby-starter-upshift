@@ -3,10 +3,10 @@ import StyleNormalizer from './StyleNormalizer';
 
 const GlobalCollection = ({ children }) => {
   return (
-    <div>
+    <>
       <StyleNormalizer />
       {children}
-    </div>
+    </>
   );
 };
 
