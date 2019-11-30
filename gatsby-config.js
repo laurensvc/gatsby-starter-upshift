@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -29,15 +30,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
-        logo: "./src/assets/branding/favicon.png",
-
-        // WebApp Manifest Configuration
-        dir: "auto",
-        lang: "nl-BE",
-        background: "rgb(33,37,40)",
-        theme_color: "rgb(33,37,40)",
-        display: "standalone",
-        orientation: "any",
+        logo: './src/assets/branding/favicon.png',
+        dir: 'auto',
+        lang: 'nl-BE',
+        background: 'rgb(33,37,40)',
+        theme_color: 'rgb(33,37,40)',
+        display: 'standalone',
+        orientation: 'any',
         icons: {
           android: true,
           appleIcon: true,
@@ -51,4 +50,4 @@ module.exports = {
       },
     },
   ],
-}
+};
