@@ -10,7 +10,13 @@ const encode = data => {
 };
 
 const Form = () => {
-  const [name, email, phone, message] = React.useState();
+  const [formValues, setFormValues] = React.useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+  const { name, email, phone, message } = formValues;
   const [sent, setSent] = React.useState(false);
 
   const handleSubmit = e => {
@@ -30,7 +36,7 @@ const Form = () => {
     e.preventDefault();
   };
 
-  const handleChange = e => this.setState({ [e.target.name]: e.target.value });
+  const handleChange = e => setFormValues({ ...formValues, [e.target.name]: e.target.value });
 
   return (
     <Flex justifyContent={'center'}>
