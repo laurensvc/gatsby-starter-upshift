@@ -1,13 +1,13 @@
 import React from 'react';
 import { Flex, Box } from 'reflexbox';
-// import { Form } from '../../components/form';
+import { Form } from './contactForm';
 import styled from '../../config/theme';
 
 const Contact = () => (
   <ContactPageWrapper>
     <Box width={[1]} p={3}>
       <ContactPageTitle>Contact formulier</ContactPageTitle>
-      {/* <Form /> */}
+      <Form />
     </Box>
   </ContactPageWrapper>
 );
