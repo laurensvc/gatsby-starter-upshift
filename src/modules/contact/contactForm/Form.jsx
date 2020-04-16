@@ -3,9 +3,9 @@ import { Flex } from 'reflexbox';
 import { FormElement, FormInput, FormTextArea, FormWrapper } from './';
 import React from 'react';
 
-const encode = data => {
+const encode = (data) => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
 };
 
@@ -19,7 +19,7 @@ const Form = () => {
   const { name, email, phone, message } = formValues;
   const [sent, setSent] = React.useState(false);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     console.log('Submitting form.');
     this.setState({ isSending: true });
     axios
@@ -29,14 +29,14 @@ const Form = () => {
       .then(() => {
         setSent(true);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log('Error while sending: ' + error);
       });
     this.setState({ isSending: false });
     e.preventDefault();
   };
 
-  const handleChange = e => setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  const handleChange = (e) => setFormValues({ ...formValues, [e.target.name]: e.target.value });
 
   return (
     <Flex justifyContent={'center'}>
