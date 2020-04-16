@@ -25,6 +25,15 @@ module.exports = {
         displayName: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`en`, `fr`, `nl`],
+        defaultLanguage: `nl`,
+        redirect: true,
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-remark`,
     {

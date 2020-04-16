@@ -1,12 +1,12 @@
 import React from 'react';
 import GlobalCollection from '../config/GlobalCollection';
+import { FormattedMessage as Trans } from 'react-intl';
 
 const Index = () => (
   <div>
     <h1>Hello upshift</h1>
     <GlobalCollection>
-      <p>ok</p>
-      <div>nou wat is dit</div>
+      <Trans id="title" />
     </GlobalCollection>
   </div>
 );
