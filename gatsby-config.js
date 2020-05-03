@@ -9,6 +9,12 @@ module.exports = {
         path: `${__dirname}/src/cms-pages`,
       },
     },
+    {
+      resolve: `babel-plugin-styled-components`,
+      options: {
+        ssr: true,
+      },
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
@@ -19,17 +25,13 @@ module.exports = {
         maxWidth: 1500,
       },
     },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        displayName: true,
-      },
-    },
+    `gatsby-plugin-styled-components`,
+
     {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/intl`,
-        languages: [`nl`, ],
+        languages: [`nl`],
         defaultLanguage: `nl`,
         redirect: true,
       },
