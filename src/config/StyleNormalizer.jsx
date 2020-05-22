@@ -64,7 +64,7 @@ const StyleNormalizer = createGlobalStyle`
     background: #F5F7FD;
   }
   ::-webkit-scrollbar-thumb {
-    background: #DFE4EB;
+    background: #666666;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
