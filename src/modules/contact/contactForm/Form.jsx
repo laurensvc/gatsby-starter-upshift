@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Flex } from 'reflexbox';
-import { FormButton, FormElement, FormInput, FormTextArea, FormWrapper } from './';
+import { FormElement, FormInput, FormTextArea, FormWrapper } from './';
 import React from 'react';
 
 const encode = (data) => {
@@ -59,9 +59,9 @@ const Form = () => {
             <FormTextArea rows="4" name="message" value={message} onChange={handleChange} />
           </FormElement>
           <Flex justifyContent="flex-end">
-            <FormButton disabled={sending} isSending={sending} onClick={handleSubmit}>
+            <button disabled={sending} onClick={handleSubmit}>
               Verzenden
-            </FormButton>
+            </button>
           </Flex>
           <Flex justifyContent="flex-end">{sent && <small>Bericht verzonden.</small>}</Flex>
           <Flex justifyContent="flex-end">{error && <small>Er liep iets mis, probeer nog eens.</small>}</Flex>

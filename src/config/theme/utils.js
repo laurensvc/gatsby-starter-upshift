@@ -32,7 +32,7 @@ export const media = {
         ${css(literals, ...placeholders)};
       }
     `,
-    tabletAndBelow: (literals, ...placeholders) =>
+  tabletAndBelow: (literals, ...placeholders) =>
     css`
       @media (min-width: 320px) and (max-width: 1024px) {
         ${css(literals, ...placeholders)};
