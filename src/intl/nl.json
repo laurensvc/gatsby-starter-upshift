@@ -1,3 +1,5 @@
 {
-  "title": "De Titel in het Nederlands"
+  "hero": {
+    "title": "De Titel in het Nederlands"
+  }
 }

@@ -1,4 +1,4 @@
-import styled from '../../../config/theme';
+import styled from 'styled-components';
 
 const FormElement = styled.div`
   padding: 10px 0;

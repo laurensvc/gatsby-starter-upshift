@@ -1,19 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
 
-const StyleNormalizer = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   html, body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 16px;
-    height: 100%;
     line-height: 1.5;
     margin: 0;
-    min-height: 100%;
     min-width: 320px;
     padding: 0;
-    scroll-behavior: smooth;
     width: 100%;
   }
+  
   h2 {
     font-size: 1.6rem;
   }
@@ -64,13 +64,12 @@ const StyleNormalizer = createGlobalStyle`
     background: #F5F7FD;
   }
   ::-webkit-scrollbar-thumb {
-    background: #666666;
+    background: #DFE4EB;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #AFB8C4;
   }
-
 `;
 
-export default StyleNormalizer;
+export default GlobalStyle;

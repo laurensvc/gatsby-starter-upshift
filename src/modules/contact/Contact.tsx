@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex, Box } from 'reflexbox';
+import styled from 'styled-components';
 import { Form } from './contactForm';
-import styled from '../../config/theme';
 
 const Contact = () => (
   <ContactPageWrapper>

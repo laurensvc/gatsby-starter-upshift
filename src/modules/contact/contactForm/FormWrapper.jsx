@@ -1,5 +1,5 @@
 import { Box } from 'reflexbox';
-import styled from '../../../config/theme';
+import styled from 'styled-components';
 
 const FormWrapper = styled(Box)`
   background: white;

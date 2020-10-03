@@ -1,9 +1,9 @@
 import React from 'react';
-import Contact from '../modules/contact/Contact';
-import GlobalCollection from '../config/GlobalCollection';
+import GlobalCollection from '../config/globals/GlobalCollection';
 import useHasMounted from '../helpers/useHasMounted';
+import Contact from '../modules/contact/Contact';
 
-const contact = () => {
+const contact: React.FC = () => {
   const hasMounted = useHasMounted();
 
   return hasMounted ? (
