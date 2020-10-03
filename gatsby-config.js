@@ -2,6 +2,11 @@
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,7 +20,6 @@ module.exports = {
         ssr: true,
       },
     },
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -25,8 +29,6 @@ module.exports = {
         maxWidth: 1500,
       },
     },
-    `gatsby-plugin-styled-components`,
-
     {
       resolve: `gatsby-plugin-intl`,
       options: {
@@ -36,8 +38,6 @@ module.exports = {
         redirect: true,
       },
     },
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
