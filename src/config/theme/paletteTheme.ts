@@ -27,6 +27,7 @@ const paletteTheme = {
     shade2: '#85F6F0',
     shade3: '#48E8DF',
     shade4: '#1CD6CB',
+    shade5: '#0f8e86',
     shade8: '#053E3A',
   },
   secondary: {

@@ -9,7 +9,7 @@ const Index: React.FC = () => {
 
   return hasMounted ? (
     <GlobalCollection>
-      <div>{t('hero.slogan')}</div>
+      <div>{t('hero.title')}</div>
     </GlobalCollection>
   ) : null;
 };
