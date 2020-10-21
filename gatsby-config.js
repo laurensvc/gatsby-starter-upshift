@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 /* eslint-disable */
 module.exports = {
   plugins: [
@@ -27,6 +31,14 @@ module.exports = {
         stripMetaData: true,
         defaultQuality: 81,
         maxWidth: 1500,
+      },
+    },
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Price'],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: false,
       },
     },
     {
