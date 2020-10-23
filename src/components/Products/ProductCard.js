@@ -40,8 +40,6 @@ const formatPrice = (amount, currency) => {
   return numberFormat.format(price);
 };
 
-const { addItem } = useShoppingCart();
-
 const ProductCard = ({ priceNode }) => {
   const [loading, setLoading] = useState(false);
 
