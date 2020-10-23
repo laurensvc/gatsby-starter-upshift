@@ -5,6 +5,7 @@ import useHasMounted from '../helpers/useHasMounted';
 import Products from '../components/Products/Products'
 import { CartProvider } from 'use-shopping-cart'
 import getStripe from '../utils/stripejs';
+import Cart from '../components/Products/Cart'
 
 const stripe = getStripe();
 
@@ -16,8 +17,8 @@ const Index: React.FC = () => {
   return hasMounted ? (
     <CartProvider 
     stripe={stripe}
-    successUrl="demo.upshift.be"
-    cancelUrl="demo.upshift.be"
+    successUrl="localhost:8000"
+    cancelUrl="localhost:8000"
     currency="EUR"
     allowedCountries={['BE']}
     mode='client-only'
@@ -25,6 +26,7 @@ const Index: React.FC = () => {
     <GlobalCollection>
       <div>{t('hero.title')}</div>
       <Products />
+      <Cart />
     </GlobalCollection>
     </CartProvider>
   ) : null;

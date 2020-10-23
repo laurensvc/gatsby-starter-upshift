@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import getStripe from '../../utils/stripejs';
+import { CartProvider, useShoppingCart } from 'use-shopping-cart';
 
 const cardStyles = {
   display: 'flex',
@@ -42,14 +43,14 @@ const formatPrice = (amount, currency) => {
 
 const ProductCard = ({ priceNode }) => {
   const [loading, setLoading] = useState(false);
-
+  const stripePromise = getStripe();
+  const { addItem } = useShoppingCart();
   const price = priceNode.id;
   const handleSubmit = async event => {
     event.preventDefault();
     setLoading(true);
 
-    const stripe = await getStripe();
-    const { error } = await stripe.redirectToCheckout({
+    const { error } = await stripePromise.redirectToCheckout({
       mode: 'payment',
       lineItems: [{ price, quantity: 1 }],
       successUrl: `${window.location.origin}/page-2/`,
@@ -63,23 +64,33 @@ const ProductCard = ({ priceNode }) => {
   };
 
   return (
-    <div style={cardStyles}>
-      {console.log(priceNode)}
-      <h4>{priceNode.product.name}</h4>
-      <p>Price: {formatPrice(priceNode.unit_amount, priceNode.currency)}</p>
-      <form onSubmit={handleSubmit}>
-        <button disabled={loading} style={loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles}>
-          BUY ME
+    <CartProvider
+      stripe={stripePromise}
+      successUrl="localhost:8000"
+      cancelUrl="localhost:8000"
+      currency="EUR"
+      allowedCountries={['BE']}
+      mode="client-only"
+      billingAddressCollection={true}
+    >
+      <div style={cardStyles}>
+        {console.log(priceNode)}
+        <h4>{priceNode.product.name}</h4>
+        <p>Price: {formatPrice(priceNode.unit_amount, priceNode.currency)}</p>
+        <form onSubmit={handleSubmit}>
+          <button disabled={loading} style={loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles}>
+            BUY ME
+          </button>
+        </form>
+        <button
+          onClick={() => addItem(priceNode.product)}
+          aria-label={`Add ${priceNode.product.name} to your cart`}
+          style={{ height: 50, width: 100, marginBottom: 30 }}
+        >
+          Add to cart
         </button>
-      </form>
-      <button
-        onClick={() => addItem(priceNode.product)}
-        aria-label={`Add ${priceNode.product.name} to your cart`}
-        style={{ height: 50, width: 100, marginBottom: 30 }}
-      >
-        Add to cart
-      </button>
-    </div>
+      </div>
+    </CartProvider>
   );
 };
 
