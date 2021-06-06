@@ -3,8 +3,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-remark`,
     {
@@ -20,44 +18,14 @@ module.exports = {
         ssr: true,
       },
     },
+
     {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        useMozJpeg: false,
-        stripMetaData: true,
-        defaultQuality: 81,
-        maxWidth: 1500,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-react-intl`,
       options: {
         path: `${__dirname}/src/intl`,
         languages: [`nl`],
         defaultLanguage: `nl`,
         redirect: true,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-favicon`,
-      options: {
-        logo: './src/assets/branding/favicon.png',
-        dir: 'auto',
-        lang: 'nl-BE',
-        background: 'rgb(33,37,40)',
-        theme_color: 'rgb(33,37,40)',
-        display: 'standalone',
-        orientation: 'any',
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: true,
-          favicons: true,
-          firefox: true,
-          yandex: true,
-          windows: true,
-        },
       },
     },
   ],
